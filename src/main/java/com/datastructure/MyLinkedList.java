@@ -21,6 +21,18 @@ public class MyLinkedList<T> {
             this.head.setNext(tempNode);
         }
     }
+    /* Add Last */
+    public void addLast(INode newNode) {
+        if (this.head == null) {
+            this.head = newNode;
+        }
+        if (tail == null) {
+            tail = newNode;
+        } else {
+            this.tail.setNext(newNode);
+            tail = newNode;
+        }
+    }
 
     public void printMyNodes() {
         INode tempNode = this.head;
