@@ -120,4 +120,11 @@ public class MyLinkedList<T extends Comparable> {
         }
     }
 
+    /* Delete/Pop First Node */
+    public INode<T> popFirst() {
+        INode<T> tempNode = this.head;
+        this.head = this.head.getNext();
+        return tempNode;
+    }
+
 }
