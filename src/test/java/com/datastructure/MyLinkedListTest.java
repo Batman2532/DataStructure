@@ -175,4 +175,17 @@ public class MyLinkedListTest {
         INode peek = stack.peek();
         Assertions.assertEquals(popStack, myFirstNode);
     }
+
+    @Test
+    public void IfQueueIsCreatedShouldReturnTrue() {
+        Queue<Integer> queue = new Queue<>();
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        queue.enqueue(myFirstNode);
+        queue.enqueue(mySecondNode);
+        queue.enqueue(myThirdNode);
+        INode peek = queue.peek();
+        Assertions.assertEquals(peek, myFirstNode);
+    }
 }
