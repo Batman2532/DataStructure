@@ -80,4 +80,18 @@ public class MyLinkedListTest {
         INode<Integer> deletedNode = myLinkedList.popLast();
         Assertions.assertEquals(deletedNode, myFirstNode);
     }
+
+    /* Search Node with given data */
+    @Test
+    public void SearchNodeForGivenDataIfFoundShouldReturnTrue() {
+        MyNode<Integer> myFirstNode = new MyNode<>(70);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(56);
+        MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
+        myLinkedList.addFirst(myFirstNode);
+        myLinkedList.addFirst(mySecondNode);
+        myLinkedList.addFirst(myThirdNode);
+        INode searchNode = myLinkedList.searchNode(30);
+        Assertions.assertEquals(searchNode, mySecondNode);
+    }
 }
