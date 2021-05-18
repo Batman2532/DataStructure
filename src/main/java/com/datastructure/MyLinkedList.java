@@ -1,6 +1,6 @@
 package com.datastructure;
 
-public class MyLinkedList<T> {
+public class MyLinkedList<T extends Comparable> {
     public INode<T> head;
     public INode<T> tail;
 
@@ -99,5 +99,26 @@ public class MyLinkedList<T> {
         }
         return size;
     }
+
+    /* Add Node in Sorted Linked List */
+    public void sortedLinkedList(INode<T> newNode) {
+        INode tempNode = head;
+        INode prevNode = null;
+        while (tempNode != null && (newNode.getData()).compareTo((T) tempNode.getData()) > 0) {
+            prevNode = tempNode;
+            tempNode = tempNode.getNext();
+        }
+        if (prevNode == null) {
+            this.head = newNode;
+        } else {
+            prevNode.setNext(newNode);
+        }
+        newNode.setNext(tempNode);
+        while (tempNode != null) {
+            this.tail = tempNode;
+            tempNode = tempNode.getNext();
+        }
+    }
+
 
 }
