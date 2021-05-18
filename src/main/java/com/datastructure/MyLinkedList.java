@@ -44,6 +44,17 @@ public class MyLinkedList<T> {
         this.head = this.head.getNext();
     }
 
+    /* Delete Last Node */
+    public INode<T> popLast() {
+        INode<T> tempNode = head;
+        while (!(tempNode.getNext().equals(tail))) {
+            tempNode = tempNode.getNext();
+        }
+        this.tail = tempNode;
+        tempNode = tempNode.getNext();
+        return tempNode;
+    }
+
 
     public void printMyNodes() {
         INode tempNode = this.head;
